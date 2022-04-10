@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+:root {
+  --clr-pale-blue: hsl(225, 100%, 94%);
+  --clr-bright-blue: hsl(245, 75%, 52%);
+  --clr-very-pale-blue: hsl(225, 100%, 98%);
+  --clr-desaturated-blue: hsl(224, 23%, 55%);
+  --clr-dark-blue: hsl(223, 47%, 23%);
+  --font-red-hat-display: "Red Hat Display", sans-serif;
+  --big-font-size: 1.78125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --btn-font-size: 0.9375rem;
+  --fw-500: 500;
+  --fw-700: 900;
+  --fw-900: 900;
+}
+
+@media screen and (max-width: 400px) {
+  :root {
+    --big-font-size: 1.375rem;
+  }
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  font-family: var(--font-red-hat-display);
+  font-size: var(--btn-font-size);
+  font-weight: var(--fw-700);
+  color: var(--clr-desaturated-blue);
+  background-color: transparent;
+  transition: 0.3s;
+}
+.btn:hover, .btn:focus {
+  color: var(--clr-dark-blue);
+}
+.btn--primary {
+  width: 100%;
+  padding: 1rem 0;
+  color: #fff;
+  background-color: var(--clr-bright-blue);
+  box-shadow: rgba(114, 128, 167, 0.45) 0px 10px 20px 0px;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 400px) {
+  .btn--primary {
+    margin-bottom: 1.3125rem;
+  }
+}
+.btn--primary:hover, .btn--primary:focus {
+  color: #fff;
+  background-color: hsla(245deg, 75%, 52%, 0.7);
+}
+
+body {
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
+  line-height: 1.5;
+  font-family: var(--font-red-hat-display);
+  font-size: var(--normal-font-size);
+  font-weight: var(--fw-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../images/pattern-background-desktop.svg);
+  background-color: var(--clr-pale-blue);
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+}
+@media screen and (max-width: 400px) {
+  body {
+    background: url(../images/pattern-background-mobile.svg);
+    background-color: var(--clr-pale-blue);
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+@media screen and (max-width: 280px) {
+  body {
+    padding: 0;
+  }
+}
+
+.card {
+  max-width: 450px;
+  background-color: #fff;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: rgba(114, 128, 167, 0.45) 0px 25px 35px -12px;
+}
+@media screen and (max-width: 280px) {
+  .card {
+    border-radius: 0;
+  }
+}
+.card .card__body {
+  text-align: center;
+  padding: 2.625rem 3rem;
+}
+@media screen and (max-width: 400px) {
+  .card .card__body {
+    padding: 1.875rem 1.5rem;
+  }
+}
+.card .card__title {
+  font-size: var(--big-font-size);
+  font-weight: var(--fw-900);
+  color: var(--clr-dark-blue);
+  margin-bottom: 0.9rem;
+}
+.card .card__description {
+  color: var(--clr-desaturated-blue);
+  padding: 0 1rem;
+  margin-bottom: 1.6rem;
+}
+@media screen and (max-width: 380px) {
+  .card .card__description {
+    padding: 0 1rem;
+  }
+}
+
+.plan {
+  background-color: var(--clr-very-pale-blue);
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 400px) {
+  .plan {
+    padding: 1rem;
+    margin-bottom: 1.5625rem;
+  }
+}
+@media screen and (max-width: 340px) {
+  .plan {
+    flex-direction: column;
+  }
+}
+.plan__icon {
+  width: 48px;
+}
+.plan__data {
+  text-align: left;
+  margin: 0 1.5rem 0 1.25rem;
+}
+.plan__type, .plan__price, .plan__change {
+  font-size: var(--small-font-size);
+}
+.plan__type {
+  font-weight: var(--fw-700);
+  color: var(--clr-dark-blue);
+}
+.plan__price {
+  color: var(--clr-desaturated-blue);
+}
+.plan__change {
+  font-weight: var(--fw-700);
+  color: var(--clr-bright-blue);
+  margin-left: auto;
+  transition: 0.3s;
+}
+.plan__change:hover, .plan__change:focus {
+  color: hsla(245deg, 75%, 52%, 0.7);
+  text-decoration: none;
+}
+@media screen and (max-width: 340px) {
+  .plan__change {
+    margin-left: 0;
+  }
+}
+
+.attribution {
+  position: absolute;
+  bottom: 25px;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
